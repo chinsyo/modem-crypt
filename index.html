@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CMCC Modem PPPoE Crypt</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+        <script type="text/javascript">
+            function sha256(val) {
+                let dgst =  CryptoJS.SHA256(val.toString());
+                return CryptoJS.enc.Hex.stringify(dgst);
+            };
+
+            function md5(val) {
+                let dgst =  CryptoJS.MD5(val.toString());
+                return CryptoJS.enc.Hex.stringify(dgst);
+            };
+
+            function hack() {
+                let dst = document.getElementById("name").value;
+                const re = /^[0-9a-f]{64}$/i;
+                if (!dst.match(re)) {
+                    UIkit.modal.alert('请输入正确的密码').then(function () {
+                        console.log('Confirmed.')
+                    }, function () {
+                        console.log('Rejected.')
+                    }); 
+                    return;
+                }
+
+                for (let src=0; src<10000000; src++) {
+                    let ret = sha256(md5(src));
+                    if (ret === dst) {
+                        UIkit.modal.confirm('您的密码是:' + src).then(function () {
+                            console.log('Confirmed.')
+                        }, function () {
+                            console.log('Rejected.')
+                        });
+                        break;
+                    };
+                }
+            };
+        </script>
+
+    </head>
+    <body>
+        <div uk-sticky="media: 960"
+            class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
+            style="position: fixed; top: 0px; width: 1065px;">
+            <div class="uk-container uk-container-expand">
+                <nav class="uk-navbar">
+                    <div class="uk-navbar-left uk-margin-left">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="28" height="34" viewBox="0 0 1600.000000 1600.000000" preserveAspectRatio="xMidYMid meet">
+                                <g transform="translate(0.000000,1600.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                                <path d="M7560 15359 c-1739 -32 -3360 -342 -4355 -833 -375 -185 -624 -368 -797 -585 -64 -80 -149 -245 -170 -331 -19 -81 -19 -5679 0 -5850 130 -1122 709 -2543 1498 -3675 871 -1251 1953 -2160 3183 -2677 286 -120 747 -270 988 -322 22 -5 76 4 185 33 1026 267 1941 768 2783 1522 174 156 531 520 682 696 678 789 1226 1700 1616 2688 190 480 343 1003 416 1425 60 338 55 77 58 3215 3 2853 3 2870 -17 2949 -98 387 -517 738 -1245 1041 -981 409 -2530 679 -4015 701 -184 2 -360 6 -390 7 -30 1 -219 -1 -420 -4z m940 -639 c1524 -54 2842 -303 3785 -714 347 -152 642 -350 712 -478 17 -32 18 -142 21 -2728 3 -2728 1 -2890 -33 -3124 -117 -788 -486 -1768 -993 -2636 -488 -835 -1084 -1551 -1767 -2120 -394 -329 -908 -653 -1355 -855 -111 -50 -289 -125 -297 -125 -2 0 -3 450 -3 1000 l0 1000 -635 0 -635 0 0 -1000 c0 -550 -2 -1000 -4 -1000 -16 0 -324 138 -476 213 -1193 592 -2258 1662 -3027 3042 -270 483 -484 968 -652 1471 -124 370 -198 665 -253 999 l-23 140 -2 2843 c-3 2790 -3 2843 16 2880 27 54 152 169 262 241 52 34 168 100 259 146 1122 567 3082 877 5100 805z"/>
+                                <path d="M5205 12499 c-636 -59 -1174 -430 -1625 -1120 -44 -67 -78 -124 -76 -127 2 -2 51 27 108 65 522 349 988 533 1394 550 371 16 636 -97 940 -401 156 -157 237 -261 397 -511 129 -201 177 -254 272 -300 139 -68 286 -68 423 1 173 86 271 258 259 454 -8 133 -28 175 -172 356 -38 48 -105 132 -148 186 -495 621 -1098 910 -1772 847z"/>
+                                <path d="M10295 12499 c-335 -35 -664 -174 -965 -407 -123 -96 -329 -307 -450 -461 -58 -74 -133 -168 -168 -210 -115 -139 -157 -268 -135 -410 41 -267 307 -455 561 -398 96 22 176 62 231 117 25 25 93 119 150 209 320 504 601 765 947 880 126 42 231 55 393 48 433 -18 856 -189 1486 -602 l30 -20 -29 50 c-148 255 -419 578 -641 764 -399 333 -908 492 -1410 440z"/>
+                                <path d="M4826 10589 c-369 -48 -731 -202 -961 -412 l-58 -52 54 -46 c253 -216 554 -350 914 -406 151 -24 459 -24 612 0 357 56 673 199 927 419 l39 34 -74 64 c-244 211 -588 354 -959 400 -99 12 -395 11 -494 -1z"/>
+                                <path d="M10515 10584 c-365 -49 -704 -198 -950 -418 l-40 -36 60 -56 c77 -72 214 -163 336 -225 571 -286 1339 -257 1874 71 74 45 218 154 248 188 17 19 16 21 -44 75 -226 205 -574 355 -936 402 -139 18 -410 18 -548 -1z"/>
+                                <path d="M3520 7702 c14 -22 369 -592 790 -1266 l765 -1225 1115 -1 1115 0 315 315 315 315 315 -315 315 -315 1116 0 1115 0 780 1246 c873 1397 796 1274 790 1274 -2 0 -428 -353 -946 -785 l-942 -785 -637 0 -636 0 -475 475 -475 475 -320 0 -320 0 -475 -475 -475 -475 -635 0 -635 0 -950 792 c-724 604 -943 782 -925 750z"/>
+                                </g>
+                            </svg>
+                            CMCC Modem PPPoE Crypt
+                    </div>
+                    <div class="uk-navbar-right uk-margin-right">
+
+                        <div class="uk-navbar-item uk-visible@m">
+                            <a href="../download" class="uk-button uk-button-default tm-button-default uk-icon">
+                                
+                                <span uk-icon="icon: github"></span>
+                                Download 
+                            </a>
+                        </div> 
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="uk-container uk-margin-top">
+
+            <p class="uk-margin uk-text-meta uk-text-small uk-text-light uk-text-warning">
+                <span class="uk-label uk-label-warning">警告</span>
+                仅用于个人学习研究，请勿用于其他用途，请在下载后的24小时内删除该软件！
+            </p>
+
+    
+            <div class="uk-margin">
+                <label for="name">密码:</label>
+                <textarea class="uk-textarea" name="name" id="name" rows="5" placeholder="请加密码粘贴到这里"></textarea>
+            </div>
+    
+            <div class="uk-margin">
+                <button class="uk-button uk-button-primary uk-width-1-1" id="submit" onclick="hack()">开始解密</button>
+            </div>
+
+            <div class="uk-margin">
+                <button uk-toggle="target: #hint; animation: uk-animation-fade" type="button" class="uk-button uk-button-default uk-width-1-1">使用帮助</button>
+                <dl class="uk-description-list uk-description-list-divider uk-width-1-1 uk-margin-top" id="hint" hidden>
+                    <dt>通过Wi-Fi或网线连接光猫</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                    <dt>通过超级管理员登录光猫后台</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+                    <dt>切换到INTERNET网络方式</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+                    <dt>查看PPPoE账号/密码信息</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+                </dl>
+            </div>
+        </div>
+    </body>
+</html>
+
