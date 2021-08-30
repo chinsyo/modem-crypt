@@ -4,11 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CMCC Modem PPPoE Crypt</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css"/>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
         <script type="text/javascript">
             function sha256(val) {
@@ -46,8 +45,8 @@
                 }
             };
         </script>
-
     </head>
+
     <body>
         <div uk-sticky="media: 960"
             class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
@@ -69,10 +68,8 @@
                             CMCC Modem PPPoE Crypt
                     </div>
                     <div class="uk-navbar-right uk-margin-right">
-
                         <div class="uk-navbar-item uk-visible@m">
                             <a href="../download" class="uk-button uk-button-default tm-button-default uk-icon">
-                                
                                 <span uk-icon="icon: github"></span>
                                 Download 
                             </a>
@@ -89,12 +86,10 @@
                 仅用于个人学习研究，请勿用于其他用途，请在下载后的24小时内删除该软件！
             </p>
 
-    
             <div class="uk-margin">
                 <label for="name">密码:</label>
                 <textarea class="uk-textarea" name="name" id="name" rows="5" placeholder="请加密码粘贴到这里"></textarea>
             </div>
-    
             <div class="uk-margin">
                 <button class="uk-button uk-button-primary uk-width-1-1" id="submit" onclick="hack()">开始解密</button>
             </div>
@@ -103,13 +98,13 @@
                 <button uk-toggle="target: #hint; animation: uk-animation-fade" type="button" class="uk-button uk-button-default uk-width-1-1">使用帮助</button>
                 <dl class="uk-description-list uk-description-list-divider uk-width-1-1 uk-margin-top" id="hint" hidden>
                     <dt>通过Wi-Fi或网线连接光猫</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                    <dd>打开弱电箱，查看光猫背后的Wi-Fi名称和密码，连接前缀为CMCC的Wi-Fi或通过网线连接光猫WAN口</dd>
                     <dt>通过超级管理员登录光猫后台</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+                    <dd>以吉比特光猫为例，管理后台地址 http://192.168.1.1 CMCCAdmin aDm8H%MdA </dd>
                     <dt>切换到INTERNET网络方式</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+                    <dd>在连接名称下拉列表中选中包含_INTERNET_的一项</dd>
                     <dt>查看PPPoE账号/密码信息</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+                    <dd>通过Chrome调试工具选中PPPoE密码，编辑HTML将type由password改为text</dd>
                 </dl>
             </div>
         </div>
