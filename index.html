@@ -21,7 +21,7 @@
             };
 
             function hack() {
-                let dst = document.getElementById("name").value;
+                let dst = document.getElementById("password").value;
                 const re = /^[0-9a-f]{64}$/i;
                 if (!dst.match(re)) {
                     UIkit.modal.alert('请输入正确的密码').then(function () {
@@ -87,8 +87,8 @@
             </p>
 
             <div class="uk-margin">
-                <label for="name">密码:</label>
-                <textarea class="uk-textarea" name="name" id="name" rows="5" placeholder="请加密码粘贴到这里"></textarea>
+                <label for="password">密码:</label>
+                <textarea class="uk-textarea" name="password" id="password" rows="5" placeholder="请将密码粘贴到这里"></textarea>
             </div>
             <div class="uk-margin">
                 <button class="uk-button uk-button-primary uk-width-1-1" id="submit" onclick="hack()">开始解密</button>
