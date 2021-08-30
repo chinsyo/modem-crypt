@@ -35,7 +35,7 @@
                 for (let src=0; src<10000000; src++) {
                     let ret = sha256(md5(src));
                     if (ret === dst) {
-                        UIkit.modal.confirm('您的密码是:' + src).then(function () {
+                        UIkit.modal.confirm('您的原始密码是:' + src).then(function () {
                             console.log('Confirmed.')
                         }, function () {
                             console.log('Rejected.')
